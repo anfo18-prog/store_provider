@@ -231,3 +231,11 @@ vendor/bin/codecept run functional,unit --coverage --coverage-html --coverage-xm
 ```
 
 You can see code coverage output under the `tests/_output` directory.
+
+DB & API INVENTORY CONTENT
+--------------------------
+
+To know how to execute every associated feature, you need to set the next steps:
+
+- `DB Script`: The app requires a DB connection to store and get Sells data, so, create a new DB from the SQL script located on resources/tiendamia_challenge.sql and do not forget to add the DB connection params on config/db.php
+- `API Endpoint access (Inventory)`: The swagger related documentation is located on resources/anfo18-TiendamiaChallenge-0.1-resolved.yaml file

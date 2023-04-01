@@ -1,0 +1,155 @@
+---
+openapi: 3.0.1
+info:
+  title: Tiendamia challenge
+  description: defaultDescription
+  version: "0.1"
+servers:
+- url: http://localhost:8888
+paths:
+  /tiendamia-challenge/web/index.php/sell/daily-sells:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+      - name: date
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 2023-04-01
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+      - url: http://localhost:8888
+    servers:
+    - url: http://localhost:8888
+  /tiendamia-challenge/web/index.php/sell/find-by-dates:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+      - name: date_to
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 2023-04-02 00:00:00
+      - name: date_from
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: 2023-04-01 00:00:00
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+      - url: http://localhost:8888
+    servers:
+    - url: http://localhost:8888
+  /tiendamia-challenge/web/index.php/sell:
+    post:
+      description: Auto generated using Swagger Inspector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/index_php_sell_body'
+            examples:
+              "0":
+                value: |-
+                  {
+                      "date": "2023-04-01 00:00:00",
+                      "sku": "xxx",
+                      "offer_id": "1",
+                      "price": "25"
+                  }
+      responses:
+        "201":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+      - url: http://localhost:8888
+    servers:
+    - url: http://localhost:8888
+  /tiendamia-challenge/web/index.php/offer/best-offer-by-sku:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+      - name: isMockData
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+        example: "false"
+      - name: sortRule
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: shipping_price
+      - name: sku
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: xxx
+      - name: ascRule
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: boolean
+        example: "true"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+      - url: http://localhost:8888
+    servers:
+    - url: http://localhost:8888
+components:
+  schemas:
+    index_php_sell_body:
+      type: object
+      properties:
+        date:
+          type: string
+        price:
+          type: string
+        sku:
+          type: string
+        offer_id:
+          type: string

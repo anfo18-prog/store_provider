@@ -12,7 +12,7 @@ use Yii;
  * @property string|null $sku
  * @property int $offer_id
  */
-class Sell extends \yii\db\ActiveRecord
+class SkuSells extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -30,8 +30,6 @@ class Sell extends \yii\db\ActiveRecord
         return [
             [['date'], 'safe'],
             [['sku'], 'string'],
-            [['offer_id'], 'required'],
-            [['offer_id'], 'integer'],
             [['price'], 'number'],
         ];
     }
@@ -45,7 +43,7 @@ class Sell extends \yii\db\ActiveRecord
             'id' => 'ID',
             'date' => 'Date',
             'sku' => 'Sku',
-            'offer_id' => 'Offer ID',
+            'price' => 'Price',
         ];
     }
 }
